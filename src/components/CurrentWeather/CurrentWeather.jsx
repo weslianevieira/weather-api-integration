@@ -1,20 +1,24 @@
 import React from 'react'
 import './styles.scss'
-import foto from '../../assets/icons/01d.png'
 
-const CurrentWeather = () => {
+
+const CurrentWeather = ({ data }) => {
   return (
     <div className='weather'>
       <div className='top'>
         <div>
-          <p className='weather-city'>Brasila</p>
-          <p className='weather-description'>Ensolarado</p>
+          <p className='weather-city'>
+            {data.city}
+          </p>
+          <p className='weather-description'>
+            {data.weather[0].description}
+          </p>
         </div>
-        <img className='weather-icon' alt='tempo-icon' src={foto} />
+        <img className='weather-icon' alt='tempo-icon' src={`icons/${data.weather[0].icon}.png`} />
       </div>
       <div className='bottom'>
         <p className='weather-temperature'>
-          18
+          {Math.round(data.main.temp)}°C
         </p>
         <div className='weather-details'>
           <div className='weather-parameter_row'>
@@ -28,7 +32,7 @@ const CurrentWeather = () => {
               Sensação
             </span>
             <span className='weather-parameter-value'>
-              22
+              {Math.round(data.main.feels_like)}°C
             </span>
           </div>
           <div className='weather-parameter_row'>
@@ -36,7 +40,7 @@ const CurrentWeather = () => {
               Vento
             </span>
             <span className='weather-parameter-value'>
-              2 m/s
+              {data.wind.speed}m/s
             </span>
           </div>
           <div className='weather-parameter_row'>
@@ -44,7 +48,7 @@ const CurrentWeather = () => {
               Humidade
             </span>
             <span className='weather-parameter-value'>
-              2%
+            {data.main.pressure}%
             </span>
           </div>
           <div className='weather-parameter_row'>
@@ -52,7 +56,7 @@ const CurrentWeather = () => {
               Pressão
             </span>
             <span className='weather-parameter-value'>
-              15 hPa
+              {data.main.pressure}hPa
             </span>
           </div>
         </div>
