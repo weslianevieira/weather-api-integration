@@ -2,26 +2,25 @@
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 /30%);
     color: #fff;
-    background-color: #333;
+    background-color: rgba(255, 68, 0, 0.616);
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
+    width: 40%;
 
-    @media screen and (max-width: 1080px) {
-		width: 350px;
-	}
 
-	@media screen and (max-width: 760px) {
-		width: 350px;
-	}
 
-	@media screen and (max-width: 520px) {
-		width: 80%;
-	}
+    @media screen and (max-width: 760px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 520px) {
+        width: 70%;
+    }
 
 }
 
 .top {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
@@ -41,12 +40,12 @@
     }
 
     .weather-icon {
-        width: 30%;
+        width: 10%;
     }
 }
 
 .bottom {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
@@ -65,7 +64,7 @@
         .weather-parameter_row {
             display: flex;
             justify-content: space-between;
-            
+
 
             .weather-parameter-label {
                 text-align: left;
@@ -80,7 +79,7 @@
             }
         }
 
-        
+
 
     }
 }
