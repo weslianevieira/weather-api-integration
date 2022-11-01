@@ -48,7 +48,7 @@ const CurrentWeather = ({ data }) => {
               Humidade
             </span>
             <span className='weather-parameter-value'>
-            {data.main.pressure}%
+              {data.main.pressure}%
             </span>
           </div>
           <div className='weather-parameter_row'>
